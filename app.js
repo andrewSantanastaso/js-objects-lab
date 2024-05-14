@@ -259,3 +259,13 @@ for (let gym of game.gyms) {
     }
 }
 // console.log(game.gyms)
+
+/*
+Exercise 17
+1. Log the entire `game` object to the console. Take a moment to review the changes you've made throughout the exercises.
+
+
+Solve Exercise 17 here:
+*/
+
+console.log(game)
