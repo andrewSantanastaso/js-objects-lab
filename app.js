@@ -39,12 +39,7 @@ Exercise 4
 
 
 Solve Exercise 4 here:
-*/
-// for (let poke of pokemon) {
-//     if (poke.starter === true) {
-//         console.log(poke)
-//     }
-// }
+
 
 game.party.push(pokemon[6])
 // console.log(game.party)
@@ -120,4 +115,20 @@ Solve Exercise 9 here:
 
 for (let member of game.party) {
     console.log(member.name)
+}
+
+/*
+Exercise 10
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
+
+
+Solve Exercise 10 here:
+*/
+
+
+for (let poke of pokemon) {
+    if (poke.starter === true) {
+        console.log(poke.name)
+    }
 }
