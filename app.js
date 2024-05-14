@@ -412,16 +412,17 @@ const pokemonTypes = () => {
     const output = {}
 
     for (let i = 0; i < pokemon.length; i++) {
-        output[pokemon[i].type] = []
-        for (let j = 0; j < pokemon.length; j++) {
-            if (output[pokemon[j].type] === output[pokemon[i].type]) {
-                output[pokemon[i].type].push(pokemon[j])
-            }
+        const type = pokemon[i].type
+        if (!output[type]) {
+            output[type] = []
         }
 
+        output[type].push(pokemon[i])
     }
 
     return output
 }
 
-console.log(pokemonTypes())
+
+console.dir(pokemonTypes(), { maxArrayLength: null })
+// pokemonTypes()
