@@ -71,7 +71,7 @@ Solve Exercise 6 here:
 
 game.party.sort((a, b) => a.hp - b.hp)
 
-console.log(game.party)
+// console.log(game.party)
 
 /*
 Exercise 7
@@ -89,3 +89,23 @@ for (let gym of game.gyms) {
 }
 
 // console.log(game.gyms)
+
+/*
+Exercise 8
+1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
+2. How would you replace the current starter Pokémon in your party with its evolved form?
+
+Hint: 
+  - Pokemon 1: Bulbasaur evolves into Pokemon 2: Ivysaur
+  - Pokemon 4: Charmander evolves into Pokemon 5: Charmeleon
+  - Pokemon 7: Squirtle evolves into Pokemon 8: Wartortle
+  - Pokemon 25: Pikachu evolves into Pokemon 26: Raichu
+
+More Hints: The existing starter Pokemon will be *replaced* in your party with the Pokemon it evolved into. Remember that you're working with an array of objects - what array method is ideal for replacing one element with another? 
+
+Solve Exercise 8 here:
+*/
+
+game.party[0] = pokemon[7]
+
+// console.log(game.party)
