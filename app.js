@@ -76,14 +76,15 @@ Exercise 7
 
 Solve Exercise 7 here:
 */
-
-for (let gym of game.gyms) {
-    if (gym.difficulty < 3) {
-        gym.completed = true
+function completeGyms(level) {
+    for (let gym of game.gyms) {
+        if (gym.difficulty < level) {
+            gym.completed = true
+        }
     }
 }
-
-// console.log(game.gyms)
+completeGyms(3)
+console.log(game.gyms)
 
 /*
 Exercise 8
@@ -182,11 +183,13 @@ Exercise 13
 Solve Exercise 13 here:
 */
 
-for (let gym of game.gyms) {
-    if (gym.difficulty < 6) {
-        gym.completed = true
-    }
-}
+// for (let gym of game.gyms) {
+//     if (gym.difficulty < 6) {
+//         gym.completed = true
+//     }
+// }
+
+completeGyms(6)
 console.log(game.gyms)
 
 /*
@@ -227,7 +230,7 @@ game.gymStatus = () => {
     console.log(gymTally)
 }
 
-// game.gymStatus()
+game.gymStatus()
 
 /*
 Exercise 15
@@ -253,12 +256,15 @@ Exercise 16
 
 Solve Exercise 16 here:
 */
-for (let gym of game.gyms) {
-    if (gym.difficulty < 8) {
-        gym.completed = true
-    }
-}
-// console.log(game.gyms)
+// for (let gym of game.gyms) {
+//     if (gym.difficulty < 8) {
+//         gym.completed = true
+//     }
+// }
+
+completeGyms(8)
+console.log(game.gyms)
+game.gymStatus()
 
 /*
 Exercise 17
@@ -413,5 +419,5 @@ const pokemonTypes = () => {
 }
 
 
-console.dir(pokemonTypes(), { maxArrayLength: null })
+//console.dir(pokemonTypes(), { maxArrayLength: null })
 // pokemonTypes()
