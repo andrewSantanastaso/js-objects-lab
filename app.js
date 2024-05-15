@@ -41,7 +41,7 @@ Exercise 4
 Solve Exercise 4 here:*/
 
 
-game.party.push(pokemon[6])
+game.party.push(pokemon[1])
 // console.log(game.party)
 
 /*
@@ -102,15 +102,27 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 8 here:
 */
 
-game.party[0] = pokemon[7]
+// game.party[0] = pokemon[7]
 
+const evolveStarter = () => {
+    let starter
+    let evolved
+    for (let member of game.party) {
+        if (member.starter === true) {
+            starter = game.party.indexOf(member)
+            evolved = pokemon[pokemon.indexOf(member) + 1]
+            game.party[starter] = evolved
+        }
+    }
+}
+evolveStarter()
 // console.log(game.party)
 
 /*
 Exercise 9
 1. Print the name of each Pokémon in your party.
 2. Consider using a loop or an array method to access each Pokémon's name.
-
+ 
 Solve Exercise 9 here:
 */
 
@@ -122,8 +134,8 @@ for (let member of game.party) {
 Exercise 10
 1. Can you print out all the starter Pokémon from the `pokemon` array?
 2. Think about how you can identify a starter Pokémon and then log their names.
-
-
+ 
+ 
 Solve Exercise 10 here:
 */
 
@@ -140,9 +152,9 @@ Exercise 11
   - Accept an object as a parameter called `pokemonObj`
   - Add the `pokemonObj` to the `game.party` array.
   - not return anything
-
+ 
 After writing this method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
-
+ 
 Solve Exercise 11 here:
 */
 
@@ -158,12 +170,12 @@ console.log(game.party)
 Exercise 12
 1. Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify it so that it also decreases the number of pokeballs in your inventory each time you catch a Pokémon.
 2. How will you find and update the quantity of pokeballs in the `game.items` array?
-
+ 
 Tips:
 For this exercise, it's okay to have a negative number of pokeballs.
 After updating the method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
 Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
-
+ 
 Solve Exercise 12 here:
 */
 
@@ -179,7 +191,7 @@ game.catchPokemon = (pokemonObj) => {
 Exercise 13
 1. Similar to Exercise 7, now complete gyms with a difficulty below 6. How will you approach this?
  (change the value of `complete` in the qualifying objects from false to true).
-
+ 
 Solve Exercise 13 here:
 */
 
@@ -196,7 +208,7 @@ console.log(game.gyms)
 Exercise 14
 1. Create a `gymStatus` method in `game` to tally completed and incomplete gyms.
 2. How will you iterate through the `gyms` array and update the tally? Remember to log the final tally.
-
+ 
 This method should:
   - Not accept any arguments.
   - Initially create a constant `gymTally`, which is an object that has two 
@@ -209,9 +221,9 @@ This method should:
       `false` for their `completed` property.
   - Log the value of `gymTally`.
   - The method should not return anything.
-
+ 
 For example, if five gym objects have a value of `true` on their `completed` property and three gym objects have a value of `false` on their `completed` property, the logged value would be: `{ completed: 5, incomplete: 3 }`.
-
+ 
 Solve Exercise 14 here:
 */
 game.gymStatus = () => {
@@ -235,12 +247,12 @@ game.gymStatus()
 /*
 Exercise 15
 1. Add a `partyCount` method to `game` that counts the number of Pokémon in your party.
-
+ 
 This method should:
   - Not accept any arguments.
   - Count the number of Pokemon in the party.
   - return the found number of Pokemon in the party.
-
+ 
 Solve Exercise 15 here:
 */
 game.partyCount = () => {
@@ -253,7 +265,7 @@ game.partyCount = () => {
 Exercise 16
 1. Now, complete gyms with a difficulty below 8. Reflect on how this is similar to or different from the previous gym exercises.
 (change the value of `complete` in the qualifying objects from false to true).
-
+ 
 Solve Exercise 16 here:
 */
 // for (let gym of game.gyms) {
@@ -269,8 +281,8 @@ game.gymStatus()
 /*
 Exercise 17
 1. Log the entire `game` object to the console. Take a moment to review the changes you've made throughout the exercises.
-
-
+ 
+ 
 Solve Exercise 17 here:
 */
 
@@ -279,19 +291,19 @@ console.log(game)
 /*
 Exercise 18
 Add a new property to the `game` object called `collection` and initialize its value to an empty array.
-
+ 
 Copy the `catchPokemon` method you wrote in Exercise Twelve and paste it below. Modify it so that:
   - Ensure that no more than six Pokemon can be in the party at any time. 
     Excess Pokemon should be placed in the `game.collection` array.
   - It's up to you how to distribute Pokemon in a situation where more than six 
     would be placed into the `game.party` array.
-
+ 
 Again, for this exercise, it's okay to have a negative number of pokeballs.
-
+ 
 After updating the method, use it by calling it and passing in a pokemon object of your choice from the `pokemon` data to catch it.
-
+ 
 Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
-
+ 
 Solve Exercise 18 here:
 */
 
@@ -312,11 +324,11 @@ game.catchPokemon(pokemon[37])
 /*
 Exercise 19
 Copy the `catchPokemon` method that you just wrote above, and paste it below. The time has come to make it so that we cannot catch a Pokemon when we do not have any pokeballs to catch it with. 
-
+ 
 Modify the method so that if there are no pokeballs a message will be displayed that there are not enough pokeballs to catch the desired Pokemon.
-
+ 
 Also, ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
-
+ 
 Solve Exercise 19 here:
 */
 
@@ -342,11 +354,11 @@ game.catchPokemon = (pokemonObj) => {
 /*
 Exercise 20
 Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify is so that you can just pass in the name of a Pokemon instead of an entire object, and the method will look up the Pokemon from the data set for you.
-
+ 
 The string passed in should be allowed to be any case (for example, if the string 'PiKacHU' is passed to the function, it should match to 'Pikachu' in the data set). 
-
+ 
 If there is not a match, then return a string noting that the selected Pokemon does not exist. Ensure you do not decrement the pokeball count if an invalid Pokemon name is passed in, and also ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
-
+ 
 Solve Exercise 20 here:
 */
 
@@ -381,7 +393,7 @@ console.log(game.collection)
 /*
 Exercise 21
 Dynamically construct an object with the existing `pokemon` data sorted by the different pokemon types. The object will have this structure:
-
+ 
 {
   grass: [
     { number: 1, name: 'Bulbasaur', type: 'grass', hp: 45, starter: true },
@@ -398,9 +410,9 @@ Dynamically construct an object with the existing `pokemon` data sorted by the d
   ],
   * etc... until there is an array for every Pokemon type!
 }
-
+ 
 Log the object when it's constructed.
-
+ 
 Solve Exercise 21 here:
 */
 
