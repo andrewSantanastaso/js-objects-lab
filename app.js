@@ -38,7 +38,7 @@ Exercise 4
 2. Add this Pokémon to the `game.party` array. Which array method will you use to add them?
 
 
-Solve Exercise 4 here:
+Solve Exercise 4 here:*/
 
 
 game.party.push(pokemon[6])
@@ -295,7 +295,6 @@ game.catchPokemon = (pokemonObj) => {
     game.items[1].quantity--
     if (game.party.length >= 6) {
         game.collection.push(pokemonObj)
-
     }
     else {
         game.party.push(pokemonObj)
@@ -320,7 +319,6 @@ game.catchPokemon = (pokemonObj) => {
         game.items[1].quantity--
         if (game.party.length >= 6) {
             game.collection.push(pokemonObj)
-
         }
         else {
             game.party.push(pokemonObj)
@@ -357,7 +355,6 @@ game.catchPokemon = (pokeName) => {
                 game.items[1].quantity--
                 if (game.party.length >= 6) {
                     game.collection.push(poke)
-
                 }
                 else {
                     game.party.push(poke)
@@ -366,13 +363,8 @@ game.catchPokemon = (pokeName) => {
             else {
                 console.log("No pokeballs remaining")
             }
-
         }
-
-
-
     }
-
 }
 
 
@@ -410,16 +402,13 @@ Solve Exercise 21 here:
 
 const pokemonTypes = () => {
     const output = {}
-
     for (let i = 0; i < pokemon.length; i++) {
         const type = pokemon[i].type
         if (!output[type]) {
             output[type] = []
         }
-
         output[type].push(pokemon[i])
     }
-
     return output
 }
 
