@@ -125,11 +125,12 @@ Exercise 9
  
 Solve Exercise 9 here:
 */
-
-for (let member of game.party) {
-    console.log(member.name)
+game.printParty = () => {
+    for (let member of game.party) {
+        console.log(member.name)
+    }
 }
-
+game.printParty()
 /*
 Exercise 10
 1. Can you print out all the starter Pokémon from the `pokemon` array?
