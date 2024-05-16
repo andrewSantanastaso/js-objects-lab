@@ -13,7 +13,7 @@ const game = {
     ],
     items: [
         { name: "potion", quantity: 4 },
-        { name: "pokeball", quantity: 8 },
+        { name: "pokeball", quantity: 0 },
         { name: "rare candy", quantity: 99 },
     ],
 }
@@ -369,9 +369,9 @@ game.catchPokemon = (pokeName) => {
     for (let poke of pokemon) {
         const target = poke.name.toLowerCase()
         if (input === target) {
-            match = poke.name
             if (game.items[1].quantity > 0) {
                 game.items[1].quantity--
+                match = `You caught ${poke.name}!`
                 if (game.party.length >= 6) {
                     game.collection.push(poke)
                 }
@@ -381,9 +381,14 @@ game.catchPokemon = (pokeName) => {
             }
             else {
                 console.log("No pokeballs remaining")
+                match = ''
+                break;
             }
         }
+
+
     }
+    console.log(match)
 }
 
 
