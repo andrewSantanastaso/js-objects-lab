@@ -104,7 +104,7 @@ Solve Exercise 8 here:
 
 // game.party[0] = pokemon[7]
 
-const evolveStarter = () => {
+game.evolveStarter = () => {
     let starter
     let evolved
     for (let member of game.party) {
@@ -115,7 +115,7 @@ const evolveStarter = () => {
         }
     }
 }
-evolveStarter()
+game.evolveStarter()
 // console.log(game.party)
 
 /*
