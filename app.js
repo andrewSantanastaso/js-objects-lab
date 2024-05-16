@@ -76,14 +76,14 @@ Exercise 7
 
 Solve Exercise 7 here:
 */
-function completeGyms(level) {
+game.completeGyms = (level) => {
     for (let gym of game.gyms) {
         if (gym.difficulty < level) {
             gym.completed = true
         }
     }
 }
-completeGyms(3)
+game.completeGyms(3)
 console.log(game.gyms)
 
 /*
@@ -201,7 +201,7 @@ Solve Exercise 13 here:
 //     }
 // }
 
-completeGyms(6)
+game.completeGyms(6)
 console.log(game.gyms)
 
 /*
@@ -274,7 +274,7 @@ Solve Exercise 16 here:
 //     }
 // }
 
-completeGyms(8)
+game.completeGyms(8)
 console.log(game.gyms)
 game.gymStatus()
 
